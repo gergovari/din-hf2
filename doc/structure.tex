@@ -1,0 +1,211 @@
+\newcommand{\mul}{35}
+
+\newcommand{\coordsize}{2pt}
+\newcommand{\coordcolor}{red}
+\newcommand{\coords}{
+	\pgfmathsetmacro{\ABx}{\lthree * sin(\phidegree) * \mul}
+	\pgfmathsetmacro{\BCx}{\ltwo * cos(\betadegree) * \mul}
+	\pgfmathsetmacro{\BCy}{-\ltwo * sin(\betadegree) * \mul}
+
+	\coordinate (A) at (0, \lthree * \mul);
+	\coordinate (B) at ($(A) + (\phidegree:\lthree * \mul)$);
+	\coordinate (C) at (\ABx + \BCx, 0);
+	\coordinate (D) at ($(C) + (0, -\lone * \mul)$);
+        \coordinate (E) at (0, 0);
+	\coordinate (S2) at ($ (B)!0.5!(C) $);
+
+	\coordinate (P2) at ($(C) + (0, \CPtwoy * \mul)$);
+
+	\coordinate (aBend) at ($(B) + (\abx * \amul, \aby * \amul)$);
+	\coordinate (aS2end) at ($(S2) + (\astwox * \amul, \astwoy * \amul)$);
+}
+
+\newcommand{\convention}{
+        \draw[-Stealth] 
+                (0, 0) -- +(10, 0)
+                node [below] {$x$};
+        \draw[-Stealth]
+                (0, 0) -- +(0, 2.5)
+                node [left] {$y$};
+
+        \draw[-Stealth]
+                (0, -1) arc (0:180:-.5)
+                node [midway, above] {$+$};
+}
+
+\newcommand{\points}{
+        \fill[\coordcolor] (A) circle (\coordsize) node[left, color=black] {$A$};
+        \fill[\coordcolor] (B) circle (\coordsize) node[above right, color=black] {$B$};
+        \fill[\coordcolor] (C) circle (\coordsize) node[below, color=black] {$C$};
+        \fill[\coordcolor] (D) circle (\coordsize) node[below, color=black] {$D$};
+        \fill[\coordcolor] (E) circle (\coordsize) node[below, color=black] {$E$};
+        \fill[\coordcolor] (S2) circle (\coordsize) node[above, color=black] {$S_2$};
+}
+
+\newcommand{\beamwidth}{2}
+\newcommand{\beamcolor}{black}
+\newcommand{\beams}{
+	\draw[line width=\beamwidth, \beamcolor] (B) -- (C);
+}
+
+\newcommand{\wheelcolor}{gray}
+\newcommand{\wheelwidth}{1}
+\newcommand{\wheels}{
+	\fill[\wheelcolor, opacity=.5] (A) circle (\lthree * \mul);
+	\draw[line width=\wheelwidth, \beamcolor] (A) circle (\lthree * \mul);
+
+	\fill[\wheelcolor, opacity=.5] (C) circle (\lone * \mul);
+	\draw[line width=\wheelwidth, \beamcolor] (C) circle (\lone * \mul);
+}
+
+\newcommand{\structure}{
+        \begin{figure}[hbt!]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+			\convention
+
+			\wheels
+			\beams
+                        \points
+                \end{tikzpicture}
+                \caption{Méretarányos szerkezet}
+        \end{figure}
+}
+
+\newcommand{\speedpolepoint}{\fill[cyan] (P2) circle (\coordsize * 1.5) node[above, color=black] {$P_2$};}
+\newcommand{\accelerationpolepoint}{\fill[cyan] (C) circle (\coordsize * 1.5) node[above, color=black] {$G_2$};}
+
+\newcommand{\speedcolor}{purple}
+\newcommand{\speedwidth}{1pt}
+\newcommand{\smul}{3}
+
+\newcommand{\accelcolor}{teal}
+\newcommand{\accelwidth}{1pt}
+\newcommand{\amul}{1}
+
+\newcommand{\speeds}{
+	\draw[line width=\speedwidth, \speedcolor, -Stealth]
+	(C) -- ($(C) + (\vcx * \smul, 0)$)
+	node[midway, above] {$\pmb{v}_\text{C}$};
+
+	\coordinate (vBend) at ($(B) + (\vbx * \smul, \vby * \smul)$);
+	\draw[line width=\speedwidth, \speedcolor, -Stealth]
+	(B) -- (vBend)
+	node[midway, above right] {$\pmb{v}_\text{B}$};
+
+	\coordinate (vS2end) at ($(S2) + (\vstwox * \smul, \vstwoy * \smul)$);
+	\draw[line width=\speedwidth, \speedcolor, -Stealth]
+	(S2) -- (vS2end)
+	node[above] {$\pmb{v}_{S_2}$};
+}
+
+\newcommand{\accelerations}{
+	\draw[line width=\accelwidth, \accelcolor, -Stealth]
+	(B) -- (aBend)
+	node[midway, right] {$\pmb{a}_\text{B}$};
+
+	\draw[line width=\accelwidth, \accelcolor, -Stealth]
+	(S2) -- (aS2end)
+	node[midway, left] {$\pmb{a}_{S_2}$};
+}
+
+\newcommand{\tancolor}{blue}
+\newcommand{\normcolor}{orange}
+\newcommand{\tangentials}{
+	\draw[line width=\speedwidth, \tancolor, -Stealth]
+	(S2) -- ($(S2) + (\astwotx * \amul * 100, \astwoty * \amul * 100)$)
+	node[above] {$\pmb{a}_{{S_2}_t}$};
+
+	\draw[line width=\speedwidth, \normcolor, -Stealth]
+	(S2) -- ($(S2) + (\astwonx * \amul, \astwony * \amul)$)
+	node[below] {$\pmb{a}_{{S_2}_n}$};
+}
+
+\newcommand{\accelangleecc}{.6}
+\newcommand{\accelanglerad}{20}
+\newcommand{\accelangles}{
+	\path
+	    pic["$\alpha_2$", draw=black, angle eccentricity=\accelangleecc, angle radius=\accelanglerad]
+	    {angle = aBend--B--vBend};
+
+	\path
+	    pic["$\alpha_2$", draw=black, angle eccentricity=\accelangleecc, angle radius=\accelanglerad]
+	    {angle = aS2end--S2--vS2end};
+}
+
+\newcommand{\structurespeedpole}{
+        \begin{figure}[hbt!]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+			
+			\convention
+			\wheels
+			\beams
+
+			\speeds
+
+                        \points
+			\speedpolepoint
+                \end{tikzpicture}
+                \caption{Méretarányos szerkezet sebességpólussal és sebességekkel}
+        \end{figure}
+}
+
+\newcommand{\structureacceleration}{
+        \begin{figure}[hbt!]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+			
+			\convention
+			\wheels
+			\beams
+
+			\accelerations
+
+                        \points
+                \end{tikzpicture}
+                \caption{Méretarányos szerkezet gyorsulásokkal}
+        \end{figure}
+}
+
+\newcommand{\structureaccelerationpole}{
+        \begin{figure}[hbt!]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+			
+			\convention
+			\wheels
+			\beams
+			
+			\speeds
+			\accelerations
+			\accelangles
+
+                        \points
+			\accelerationpolepoint
+                \end{tikzpicture}
+                \caption{Méretarányos szerkezet gyorsuláspólussal, gyorsulásokkal és azok gyorsulásszögével}
+        \end{figure}
+}
+
+\newcommand{\structuretangential}{
+        \begin{figure}[hbt!]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+			
+			\convention
+			\wheels
+			\beams
+
+			\tangentials
+
+                        \points
+                \end{tikzpicture}
+                \caption{Méretarányos szerkezet a gyorsulás tangenciális (százszoros nagyítással a szemléltetés céljából) és normális komponensével}
+        \end{figure}
+}

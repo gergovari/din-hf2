@@ -1,0 +1,3 @@
+doc/docs/*
+!doc/docs/dinhf2.pdf
+.*lock*

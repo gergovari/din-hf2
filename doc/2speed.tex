@@ -1,0 +1,64 @@
+\section{2-es test szög -és súlypontjának sebessége}
+
+\subsection{Helyvektorok}
+\begin{equation}
+	\pmb{r}_\text{AB} =
+	\begin{bmatrix}
+		l_3 \sin\phi \\ l_3 \cos\phi \\ 0
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	\pmb{r}_\text{CB} =
+	\begin{bmatrix}
+		-l_3 \cos\beta \\ l_3 \sin\beta \\ 0
+	\end{bmatrix}
+\end{equation}
+\begin{align}
+	&\sin\beta = \frac{l_3 + l_3\cos\phi}{l_2} \\
+	&\pmb{r}_\text{CB} =
+	\begin{bmatrix}
+		-l_3 \cos\beta \\ l_3 \sin\beta \\ 0
+	\end{bmatrix} \\
+\end{align}
+\begin{equation}
+	\pmb{r}_{\text{C}{S_2}} = \frac{\pmb{r}_\text{CB}}{2}
+\end{equation}
+\begin{equation}
+	\pmb{r}_\text{EA} = 
+	\begin{bmatrix}
+		0 \\ l_3 \\ 0
+	\end{bmatrix}
+\end{equation}
+
+\subsection{Szögsebesség}
+$\pmb{v}_\text{B}$-t felírhatjuk két oldalról (2-es és 3-as test.) $\pmb{v}_\text{A}$ kiszámolásához pedig felhasználható az hogy az $\text{E}$ pontban gördülés van.
+
+\begin{align}
+	&\pmb{v}_\text{C} = 
+	\begin{bmatrix}
+		{v_\text{C}}_x \\ 0 \\ 0
+	\end{bmatrix} \\
+	&\pmb{v}_\text{E} = \pmb{0} \\
+	&\pmb{v}_\text{A} = \pmb{v}_\text{E} + \pmb{\omega}_2 \times \pmb{r}_\text{EA} \\
+	&\pmb{v}_\text{B} = 
+	\pmb{v}_\text{C} + \pmb{\omega}_2 \times \pmb{r}_\text{CB} = 
+	\pmb{v}_\text{A} + \pmb{\omega}_3 \times \pmb{r}_\text{AB} \Rightarrow \\
+\end{align}
+\begin{align}
+	&\pmb{\omega}_2 = 
+	\begin{bmatrix}
+		0 \\ 0 \\ \wtwoz
+	\end{bmatrix} \siunit{}{\radian\per\second} \\
+	&\pmb{\omega}_3 = 
+	\begin{bmatrix}
+		0 \\ 0 \\ \wthreez
+	\end{bmatrix} \siunit{}{\radian\per\second}
+\end{align}
+
+\subsection{Súlypont sebesség}
+\begin{equation}
+	\pmb{v}_{S_2} = \pmb{v}_\text{C} + \omega_2 \times \pmb{r}_{\text{C}{S_2}} = 
+	\begin{bmatrix}
+		\vstwox \\ \vstwoy \\ 0
+	\end{bmatrix} \siunit{}{\m\per\second}
+\end{equation}

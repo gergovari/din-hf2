@@ -1,0 +1,74 @@
+\section{Tömítés kiválasztása}
+
+\subsection[Minimális tömítőerő]{Minimális tömítőerő\protect\footnote{A feladathoz mellékelt segédletből származó számítások. (7. oldal)}}
+
+A belső nyomás miatti csőerő hat ellen az üzemi nyomásnak. A gyűrűfelületi csőerő nyom ellen a gyűrű alsó felülete alá benyomódó folyadéknak. A minimális tömítő erő szükséges ahhoz hogy a tömítetség kialakuljon. Ezek összege adja a csavarra ható üzemi erőt.
+
+\begin{align}
+	&z = \frac{{d_2}_t - {d_1}_t}{2} = \siunit{\tomz}{db} \\
+	&b_t^* = 9 + 0.2z = \siunit{\tombtstar}{\mm}
+\end{align}
+
+\begin{align}
+	&F_\text{cső} 
+	= \frac{\text{DN}^2 \pi}{4} p_\text{ü} = \n{\tomcso} \\
+	&F_\text{p} 
+	= \frac{\left(d_t^2 - \text{DN}^2\right)\pi}{4} p_\text{ü} 
+	= \n{\tomp} \\
+	&F_\text{töm} = n_t p_\text{ü} \pi d_t b_t^* = \n{\tomtu}
+\end{align}
+
+\begin{equation}
+	F_\text{csavar üzemi} 
+	= F_\text{cső} + F_\text{p} + F_\text{töm} 
+	= \n{\csavaruzemi}
+\end{equation}
+
+\begin{align}
+	&{n_\text{bizt}}_t = \siunit{\csavarn}{-} \\
+	&F_\text{csavar szerelési} 
+	= {n_\text{bizt}}_t F_\text{csavar üzemi}
+	= \n{\csavarszerel}
+\end{align}
+
+\begin{center}
+	\begin{tabular}{l}
+		$z$: fogak száma \siunit{}{db} \\
+		$b_t^*$: tömítés hatásos szélessége\protect\footnote{Képlete a feladathoz mellékelt segédletből. (8. oldal, 3. táblázat)} \siunit{}{\mm} \\
+		$F_\text{cső}$: belső nyomásból származó csőerő \siunit{}{\newton} \\
+		$F_\text{p}$: belső nyomásból származó gyűrűfelületi erő \siunit{}{\newton} \\
+		$F_\text{töm}$: minimális tömítő erő \siunit{}{\newton} \\
+		$F_\text{csavar üzemi}$: csavarokra ható üzemi erő \siunit{}{\newton} \\
+		${n_\text{bizt}}_t$: csavarokra ható szerelési erőhöz választott biztonsági tényező \siunit{}{-} \\
+		$F_\text{csavar szerelési}$: csavaroknál alkalmazott szerelési erő \siunit{}{\newton} \\
+	\end{tabular}
+\end{center}
+
+\newpage
+\subsection{Szabvány -és anyagválasztás}
+A DIN EN 1514-6 B29A PN100 szabvány lett választva  és ez a tömítés nagy nyomásokat is kibír. 1.4541 fémből és egy PTFE borításból készül ahol a fém fésük deformálják a műanyagot az előfeszítés hatására ezzel előidézve a tömítőerőt.
+
+\subsection[Előterv]{Előterv\protect\footnote{Előterv a DIN EN 1514-6 B29A PN100 szabvány alapján.}}
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[scale=.34]{./images/tomites.png}
+	\caption{Tömítés előtervének rajza}
+\end{figure}
+\begin{align*}
+	&{d_1}_t = \siunit{\tomdone}{\mm} \\
+	&{d_2}_t = \siunit{\tomdtwo}{\mm} \\
+	&{d_3}_t = \siunit{\tomdthree}{\mm} \\
+	&b_t = \siunit{\tombt}{\mm} \\
+	&b_m = \siunit{\tombm}{\mm} \\
+	&h_{\substack{\text{min}\\\text{max}}} = \substack{\siunit{\tomhmin}{\mm}\\\siunit{\tomhmax}{\mm}} \\
+\end{align*}
+\begin{center}
+	\begin{tabular}{l}
+		${d_1}_t$: tőmítés belső átmérő \siunit{}{\mm} \\
+		${d_2}_t$: tőmítés felfekvő felület külső átmérő \siunit{}{\mm} \\
+		${d_3}_t$: távtartó gyűrű külső átmérő \siunit{}{\mm} \\
+		$b_t$: távtartó gyűrű vastagság \siunit{}{\mm} \\
+		$b_m$: fém mag magasság \siunit{}{\mm} \\
+		$h_{\substack{\text{min}\\\text{max}}}$: szerelés utáni/előtti távolsága \\PTFE lemezeknek a vasmag tetejétől \siunit{}{\mm} \\
+	\end{tabular}
+\end{center}

@@ -1,0 +1,89 @@
+\section{Csavar előfeszítése és meghúzási nyomatéka}
+
+\subsection[Csavar szabvány]{Csavar szabvány\protect\footnote{ISO 4014 szabvány alapján kapott értékek.}}
+\begin{align*}
+	& p = \siunit{\csavarp}{\mm} \\
+	& {d_3}_\text{cs} = \siunit{\csavardthree}{\mm} \\
+	& {d_2}_\text{cs} = \siunit{\csavardtwo}{\mm} \\
+	& d_w = \siunit{\csavardw}{\mm} \\
+	& b = \siunit{\csavarb}{\mm} \\
+	& l = \siunit{\csavarl}{\mm} \\
+	& \beta = \siunit{\csavarbeta}{\degree}
+\end{align*}
+
+\begin{equation*}
+	\mu_{\substack{\text{min}\\\text{max}}}
+	= \substack{
+		\siunit{\csavarumin}{-} \\
+		\siunit{\csavarumax}{-} \\
+	}
+\end{equation*}
+
+\begin{center}
+	\begin{tabular}{l}
+		$p$: menet emelkedés \siunit{}{\mm} \\
+		${d_3}_\text{cs}$: orsó magátmérő \siunit{}{\mm} \\
+		${d_2}_\text{cs}$: csavar középátmérő \siunit{}{\mm} \\
+		$\beta$: menetprofil szöge \siunit{}{\degree} \\
+		$\mu_{\substack{\text{min}\\\text{max}}}$: súrlódási tényező\footnote{MSZ EN 24014 szabvány alapján kapott értékek.} \siunit{}{-} \\
+	\end{tabular}
+\end{center}
+
+\newpage
+\subsection[Meghúzási nyomaték]{Meghúzási nyomaték\protect\footnote{A feladathoz mellékelt segédletből származó számítások. (9-10. oldal)}}
+
+$\alpha$ menetemelkedési szög számítható eddigi adatainkból. A látszólagos súrlódási félkúpszög ($\rho^{'}$) pedig az ismert súrlódási tényezőkből. A csavar meghúzásához szükséges nyomaték ($M_\text{meghúzási}$) a csavar mentén ($M_\text{csavar}$) -és az anya homlokfelületén ($M_\text{anya}$) ébredő súrlódás összege.
+
+\begin{align}
+	&\alpha = \arctan{\frac{p}{{d_2}_\text{cs} \pi}} = \siunit{\csavaralpha}{\degree} \\
+	&\mu^{'}_{\substack{\text{min}\\\text{max}}}
+	= \frac
+		{\mu_{\substack{\text{min}\\\text{max}}}}
+		{\cos{\frac{\beta}{2}}} \\
+	&\rho^{'}_{\substack{\text{min}\\\text{max}}} 
+	= \arctan{\mu^{'}_{\substack{\text{min}\\\text{max}}}}
+	= \substack{
+		\siunit{\csavarptmin}{\degree} \\
+		\siunit{\csavarptmax}{\degree}
+	} \\
+	&d_a = \frac{d_w + M}{2} = \siunit{\csavarda}{\mm}
+\end{align}
+
+\begin{align}
+	&{M_\text{csavar}}_{\substack{\text{min}\\\text{max}}} 
+	= F_v \frac{{d_2}_\text{cs}}{2} \tan{\left(\alpha + {\rho^{'}}_{\substack{\text{min}\\\text{max}}}\right)} 
+	= \substack{
+		\siunit{\csavarMcsmin}{\newton\mm} \\
+		\siunit{\csavarMcsmax}{\newton\mm}
+	}\\
+	&{M_\text{anya}}_{\substack{\text{min}\\\text{max}}} 
+	= F_v \frac{d_a}{2} {\mu^{'}_{\substack{\text{min}\\\text{max}}}}  
+	= \substack{
+		\siunit{\csavarMamin}{\newton\mm} \\
+		\siunit{\csavarMamax}{\newton\mm}
+	}\\
+\end{align}
+
+\begin{equation}
+	{M_\text{meghúzási}}_{\substack{\text{min}\\\text{max}}} = {M_\text{csavar}}_{\substack{\text{min}\\\text{max}}} + {M_\text{anya}}_{\substack{\text{min}\\\text{max}}}
+	= \substack{
+		\siunit{\csavarmegmin}{\newton\mm} \\
+		\siunit{\csavarmegmax}{\newton\mm}
+	}\\
+\end{equation}
+
+\begin{center}
+	\begin{tabular}{l}
+		$\alpha$: menetemelkedés szöge \siunit{}{\degree} \\
+		$\mu_{\substack{\text{min}\\\text{max}}}$: súrlódási tényező \siunit{}{-} \\
+		$\beta$: menetprofil szöge \siunit{}{\degree} \\
+		$d_a$: anya felvekvő felület középátmérő \siunit{}{\mm} \\
+		$M$: csavar \siunit{}{\mm} \\
+		${d_2}_\text{cs}$: menet középátmérő \siunit{}{\mm} \\
+		${M_\text{csavar}}_{\substack{\text{min}\\\text{max}}}$: menet súrlódása \siunit{}{\newton\mm} \\
+		$F_v$: csavar terhelése \siunit{}{\newton} \\
+		$\rho^{'}_{\substack{\text{min}\\\text{max}}}$: látszólagos súrlódási félkúpszög \siunit{}{\degree} \\
+		${M_\text{anya}}_{\substack{\text{min}\\\text{max}}}$: csavaranya felülete alatti súrlódás \siunit{}{\newton\mm} \\
+		${M_\text{meghúzási}}_{\substack{\text{min}\\\text{max}}}$: meghúzási nyomaték \siunit{}{\newton\mm} \\
+	\end{tabular}
+\end{center}

@@ -1,0 +1,44 @@
+\section{2-es test szög -és súlypontjának gyorsulása}
+
+\subsection{Helyvektorok}
+\begin{align}
+	&\pmb{r}_\text{EA} = 
+	\begin{bmatrix}
+		0 \\ l_3 \\ 0
+	\end{bmatrix} \\
+	&\pmb{r}_\text{EB} = \pmb{r}_\text{EA} + \pmb{r}_\text{AB}
+\end{align}
+
+\subsection{Szöggyorsulás}
+$\text{C}$ pont sebessége állandó tehát gyorsulása zérus. $\text{A}$ pont sebessége kiszámítható az ismert geometriából és a megismert szögsebességből. Ezután $\text{B}$ pontot megint felírhatjuk két irányból.
+
+\begin{align}
+	&\pmb{a}_\text{C} = \pmb{0} \\
+	&v_\text{A} = r_3\omega_3 \\
+	&{\pmb{a}_\text{A}}_y = - \frac{v_\text{A}^2}{R+r_3} \\
+	&\pmb{a}_\text{A} = \pmb{a}_\text{E} + \pmb{\epsilon}_3 \times \pmb{r}_\text{EA} - \omega_3^2\pmb{r}_\text{EA} \Rightarrow \\
+	&\pmb{a}_\text{E} =
+	\begin{bmatrix}
+		0 \\ \acce \\ 0
+	\end{bmatrix} \siunit{}{\meter\per\second^2} \\
+	\pmb{a}_\text{B} 
+	&= \pmb{a}_\text{C} + \pmb{\epsilon_2} \times \pmb{r}_\text{CB} - \pmb{\omega}_2^2\pmb{r}_\text{CB}
+	= \pmb{a}_\text{E} + \pmb{\epsilon}_3 \times \pmb{r}_\text{EB} - \omega_3\pmb{r}_\text{EB} \Rightarrow\\
+	&\pmb{\epsilon}_2 =
+	\begin{bmatrix}
+		0 \\ 0 \\ \epstwo
+	\end{bmatrix} \siunit{}{\m\per\second^2}\\
+	&\pmb{\epsilon}_3 =
+	\begin{bmatrix}
+		0 \\ 0 \\ \epsthree
+	\end{bmatrix} \siunit{}{\m\per\second^2}\\
+\end{align}
+
+\subsection{Súlypont gyorsulás}
+\begin{align}
+	\pmb{a}_{S_2} =
+	\pmb{a}_\text{C} + \pmb{\epsilon_2} \times \pmb{r}_{\text{C}{S_2}} - \pmb{\omega}_2^2\pmb{r}_{\text{C}{S_2}} = 
+	\begin{bmatrix}
+		\astwox \\ \astwoy \\ \astwoz
+	\end{bmatrix} \siunit{}{\m\per\second^2}
+\end{align}

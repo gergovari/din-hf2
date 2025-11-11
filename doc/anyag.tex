@@ -1,0 +1,46 @@
+\section[Csavar anyagválasztás]{Csavar anyagválasztás\protect\footnote{A feladathoz mellékelt segédletből származó számítások. (10-11. oldal)}}
+
+\subsection{Redukált feszültség}
+
+A legnagyobb igénybevételre ($\sigma_\text{red}$) kell méretezni és ez a húzó ($\sigma$) illetve csavaró ($\tau$) nyomaték összege.
+
+\begin{align}
+	&A_e = \frac{\left({\frac{{d_2}_\text{cs} + {d_3}_\text{cs}}{2}}\right)^2 \pi}{4} = \siunit{\csavarae}{\mm^2} \\
+	&\sigma = \frac{F_v}{A_e} = \siunit{\csavarsigma}{\mega\pascal}
+\end{align}
+
+\begin{align}
+	&K_p = \frac{\left(\frac{{d_2}_\text{cs} + {d_3}_\text{cs}}{2}\right)^3 \pi}{16} = \siunit{\csavarkp}{\mm^3} \\
+	&M_\text{csavar} = {M_\text{anya}}_\text{max} \\
+	&\tau = \frac{M_\text{csavar}}{K_p} = \mpa{\csavartau}
+\end{align}
+
+\begin{equation}
+	\sigma_\text{red} = \sqrt{\sigma^2 + 3\tau^2} = \mpa{\csavarred}
+\end{equation}
+
+\subsection[Méretezés]{Méretezés\protect\footnote{ISO 898-1 szabvány alapján kapott értékek.}}
+
+A kiszámolt feszültséggel már lehet szilárdsági osztályt választani és a 3.6-os megfelel az igényeknek (hiszen $R_\text{eH}$ nagyobb az elvártnál).
+
+\begin{align}
+	&R_\text{eH} = \mpa{\csavarreh} \\
+	&{n_\text{bizt}}_\text{cs} = \frac{R_\text{eh}}{\sigma_\text{red}} = \siunit{\csavarntwo}{-}
+\end{align}
+
+\begin{center}
+	\begin{tabular}{l}
+		$A_e$: csavarerőt vivő keresztmetszet terület \siunit{}{\mm^2} \\
+		${d_2}_\text{cs}$: menet középátmérő \siunit{}{\mm} \\
+		${d_3}_\text{cs}$: orsó magátmérő \siunit{}{\mm} \\
+		$\sigma$: húzó feszültség \siunit{}{\mega\pascal} \\
+		$F_v$: csavar terhelése \siunit{}{\newton} \\
+		$K_p$: csavar keresztmetszet poláris másodrendű nyomaték \siunit{}{\mm^3} \\
+		$M_\text{csavar}$: csavar mentén súrlódásból származó csavaró nyomaték \siunit{}{\newton\mm} \\
+		${M_\text{anya}}_{\text{max}}$: csavaranya felülete alatti maximum súrlódás \siunit{}{\newton\mm} \\
+		$\tau$: csavaró feszültség \siunit{}{\mega\pascal} \\
+		$\sigma_\text{red}$: redukált feszültség \siunit{}{\mega\pascal} \\
+		$R_\text{eH}$: folyáshatár \siunit{}{\mega\pascal} \\
+		${N_\text{bizt}}_\text{cs}$: csavar biztonsági tényező \siunit{}{-} \\
+	\end{tabular}
+\end{center}
