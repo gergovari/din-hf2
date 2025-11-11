@@ -1,7 +1,7 @@
-\newcommand{\mul}{35}
+\newcommand{\mul}{30}
 
 \newcommand{\coordsize}{2pt}
-\newcommand{\coordcolor}{red}
+\newcommand{\coordcolor}{green}
 \newcommand{\coords}{
 	\pgfmathsetmacro{\ABx}{\lthree * sin(\phidegree) * \mul}
 	\pgfmathsetmacro{\BCx}{\ltwo * cos(\betadegree) * \mul}
@@ -44,18 +44,165 @@
 
 \newcommand{\beamwidth}{2}
 \newcommand{\beamcolor}{black}
-\newcommand{\beams}{
+\newcommand{\testtwo}{
 	\draw[line width=\beamwidth, \beamcolor] (B) -- (C);
 }
+\newcommand{\beams}{
+	\testtwo
+}
+
+
 
 \newcommand{\wheelcolor}{gray}
 \newcommand{\wheelwidth}{1}
-\newcommand{\wheels}{
+\newcommand{\testtr}{
 	\fill[\wheelcolor, opacity=.5] (A) circle (\lthree * \mul);
 	\draw[line width=\wheelwidth, \beamcolor] (A) circle (\lthree * \mul);
-
+}
+\newcommand{\testone}{
 	\fill[\wheelcolor, opacity=.5] (C) circle (\lone * \mul);
 	\draw[line width=\wheelwidth, \beamcolor] (C) circle (\lone * \mul);
+}
+\newcommand{\wheels}{
+	\testtr
+	\testone
+}
+
+\newcommand{\forcewidth}{1pt}
+\newcommand{\forcecolor}{teal}
+\newcommand{\forceunit}{1}
+
+\newcommand{\nyomwidth}{1pt}
+\newcommand{\nyomcolor}{purple}
+
+\newcommand{\speedcolor}{purple}
+\newcommand{\speedwidth}{1pt}
+\newcommand{\smul}{3}
+
+\newcommand{\accelcolor}{orange}
+\newcommand{\accelwidth}{1pt}
+\newcommand{\amul}{1}
+
+\newcommand{\sztaone}{
+        \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+
+			\testone
+			\fill[\coordcolor] (C) circle (\coordsize) node[left, color=black] {$C$};
+			\fill[\coordcolor] (D) circle (\coordsize) node[above, color=black] {$D$};
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(C) -- ($(C) + (\forceunit, 0)$)
+			node[midway, above] {$C_\text{x}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(C) -- ($(C) + (0, \forceunit)$)
+			node[midway, left] {$C_\text{y}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(C) -- ($(C) + (0, -\forceunit)$)
+			node[midway, left] {$G_1$};
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(D) -- ($(D) + (\forceunit, 0)$)
+			node[midway, below] {$D_\text{x}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			($(D) + (0, -\forceunit)$) -- (D)
+			node[midway, left] {$N_1$};
+                \end{tikzpicture}
+                \caption{1. test szabadtest-ábrája}
+        \end{figure}
+}
+
+\newcommand{\sztatwo}{
+        \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+
+			\testtwo
+			\fill[\coordcolor] (B) circle (\coordsize) node[below left, color=black] {$B$};
+			\fill[\coordcolor] (C) circle (\coordsize) node[above right, color=black] {$C$};
+			\fill[\coordcolor] (S2) circle (\coordsize) node[below left, color=black] {$S_2$};
+
+			\draw[line width=\accelwidth, \accelcolor, -Stealth]
+			(S2) -- ($(S2) + (-\astwox * \amul, 0)$)
+			node[above right] {${a_\text{S2}}_\text{x}$};
+			\draw[line width=\accelwidth, \accelcolor, -Stealth]
+			(S2) -- ($(S2) + (0, -\astwoy * \amul)$)
+			node[right] {${a_\text{S2}}_\text{y}$};
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(B) -- ($(B) + (\forceunit, 0)$)
+			node[right] {$B_\text{x}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(B) -- ($(B) + (0, \forceunit)$)
+			node[midway, left] {$B_\text{y}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(C) -- ($(C) + (-\forceunit, 0)$)
+			node[midway, below] {$C_\text{x}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(C) -- ($(C) + (0, -\forceunit)$)
+			node[midway, right] {$C_\text{y}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(S2) -- ($(S2) + (0, -\forceunit)$)
+			node[midway, right] {$G_2$};
+
+			\draw[line width=\nyomwidth, \nyomcolor, -Stealth]
+				(0, 1) arc (0:180:-.5)
+				node [midway, above] {$\epsilon_2$};
+
+                \end{tikzpicture}
+                \caption{2. test szabadtest-ábrája}
+        \end{figure}
+}
+
+\newcommand{\sztatr}{
+        \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                        \coords
+
+			\testtr
+			\fill[\coordcolor] (A) circle (\coordsize) node[left, color=black] {$A$};
+			\fill[\coordcolor] (B) circle (\coordsize) node[above right, color=black] {$B$};
+			\fill[\coordcolor] (E) circle (\coordsize) node[below right, color=black] {$E$};
+
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(B) -- ($(B) + (-\forceunit, 0)$)
+			node[midway, below] {$B_\text{x}$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(B) -- ($(B) + (0, -\forceunit)$)
+			node[below] {$B_\text{y}$};
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(E) -- ($(E) + (\forceunit, 0)$)
+			node[right] {$E_\text{x}$};
+
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			(A) -- ($(A) + (0, -\forceunit)$)
+			node[midway, left] {$G_3$};
+			\draw[line width=\forcewidth, \forcecolor, -Stealth]
+			($(E) + (0, -\forceunit)$) -- (E)
+			node[midway, left] {$N_3$};
+
+			\draw[line width=\accelwidth, \accelcolor, -Stealth]
+			(A) -- ($(A) + (\aStrx * \amul, 0)$)
+			node[right] {${a_\text{S3}}_\text{x}$};
+			\draw[line width=\accelwidth, \accelcolor, -Stealth]
+			(A) -- ($(A) + (0, -\aStry * \amul)$)
+			node[below left] {${a_\text{S3}}_\text{y}$};
+
+			\draw[line width=\nyomwidth, \nyomcolor, -Stealth]
+				(-3, 1) arc (0:180:-.5)
+				node [midway, above] {$\epsilon_3$};
+			\draw[line width=\nyomwidth, \nyomcolor, -Stealth]
+				(-3, 0) arc (0:180:-.5)
+				node [midway, above] {$\pmb{M}_\text{Z}$};
+                \end{tikzpicture}
+                \caption{3. test szabadtest-ábrája}
+        \end{figure}
 }
 
 \newcommand{\structure}{
@@ -75,14 +222,6 @@
 
 \newcommand{\speedpolepoint}{\fill[cyan] (P2) circle (\coordsize * 1.5) node[above, color=black] {$P_2$};}
 \newcommand{\accelerationpolepoint}{\fill[cyan] (C) circle (\coordsize * 1.5) node[above, color=black] {$G_2$};}
-
-\newcommand{\speedcolor}{purple}
-\newcommand{\speedwidth}{1pt}
-\newcommand{\smul}{3}
-
-\newcommand{\accelcolor}{teal}
-\newcommand{\accelwidth}{1pt}
-\newcommand{\amul}{1}
 
 \newcommand{\speeds}{
 	\draw[line width=\speedwidth, \speedcolor, -Stealth]
