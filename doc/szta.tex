@@ -1,31 +1,61 @@
 \section{Szabadtest-ábrák és a dinamika alaptétele}
 
-\begin{minipage}{.45\linewidth}
-	\sztaone
-\end{minipage}
-\begin{minipage}{.5\linewidth}
+\subsection{Ábrák}
+\begin{figure}[H]
+	\begin{minipage}[c]{.48\textwidth}
+		\sztaone
+	\end{minipage}
+	\begin{minipage}{.48\textwidth}
+		\begin{equation}
+			\left[\dot{\pmb{I}}, \pmb{F}\right] 
+			= \left[\dot{\pmb{\Pi}}_\text{S1}, \pmb{M}_\text{S1}\right]_\text{S}
+		\end{equation}
+		\begin{align}
+			&x: m_1 {a_\text{S1}}_\text{x} 
+			= C_\text{x} + D_\text{x} \\
+			&y: m_1 {a_\text{S1}}_\text{y} 
+			= C_\text{y} - G_1 + N_1 \\
+			&z: {\theta_\text{S1}}_\text{z} \epsilon_1
+			= D_\text{x} r_1
+		\end{align}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+		\sztatr
+		\begin{equation}
+			\left[\dot{\pmb{I}}, \pmb{F}\right] 
+			= \left[\dot{\pmb{\Pi}}_\text{S3}, \pmb{M}_\text{S3}\right]_\text{S}
+		\end{equation}
+		\begin{align}
+			&x: m_3 {a_\text{S3}}_\text{x} 
+			= -B_\text{x} + E_\text{x} \\
+			&y: m_3 {a_\text{S3}}_\text{y} 
+			= F_y - B_\text{y} + N_3 - G_3 \\
+			&z: {\theta_\text{S3}}_\text{z} \epsilon_3
+			= B_\text{x}\cdot l_3 \cos{\phi}
+			- B_\text{y}\cdot l_3 \sin{\phi}
+			+ E_\text{x} \cdot l_3
+		\end{align}
+\end{figure}
+
+\newpage
+\begin{figure}[H]
+	\sztatwo
 	\begin{equation}
 		\left[\dot{\pmb{I}}, \pmb{F}\right] 
-		= \left[\dot{\pmb{\Pi}}_\text{S1}, \pmb{M}_\text{S1}\right]_\text{S}
+		= \left[\dot{\pmb{\Pi}}_\text{S2}, \pmb{M}_\text{S2}\right]_\text{S}
 	\end{equation}
 	\begin{align}
-		&x: m_1 {a_\text{S1}}_\text{x} 
-		= C_\text{x} + D_\text{x} \\
-		&y: m_1 {a_\text{S1}}_\text{y} 
-		= C_\text{y} - G_1 + N_1 \\
-		&z: {\theta_\text{S1}}_\text{z} \epsilon_1
-		= D_\text{x} r_1
+		&x: m_2 {a_\text{S2}}_\text{x} 
+		= B_\text{x} - C_\text{x} \\
+		&y: m_2 {a_\text{S2}}_\text{y} 
+		= B_\text{y} - G_2 - C_\text{y} \\
+		&z: {\theta_\text{S2}}_\text{z} \epsilon_2
+		= -\left(
+			B_\text{x}\cdot\frac{l_2}{2}\sin{\beta}
+			+ C_\text{x}\cdot\frac{l_2}{2}\sin{\beta}
+			+ B_\text{y}\cdot\frac{l_2}{2}\cos{\beta}
+			+ C_\text{y}\cdot\frac{l_2}{2}\cos{\beta}
+		\right)
 	\end{align}
-	\begin{align}
-		\epsilon_1 
-		= 0 \Rightarrow D_\text{x} 
-		= \siunit{0}{\newton} \\
-		{a_\text{S1}}_\text{x} 
-		= C_\text{x} 
-		= D_\text{x}
-		= \siunit{0}{\newton}
-	\end{align}
-\end{minipage}
-
-\sztatwo
-\sztatr
+\end{figure}
