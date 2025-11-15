@@ -4,4 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}Ábrák}{2}{}%
 \contentsline {section}{\numberline {3}$F_y$ és a reakcióerők}{4}{}%
 \contentsline {section}{\numberline {4}Gördüléshez szükséges súrlódás}{5}{}%
-\contentsline {section}{\numberline {5}Kinetikus energia és erőrendszer teljesítménye}{6}{}%
+\contentsline {section}{\numberline {5}Kinetikus energia és erőrendszer teljesítménye}{5}{}%
+\contentsline {subsection}{\numberline {5.1}Kinetikus energia}{5}{}%
+\contentsline {subsection}{\numberline {5.2}Teljesítmény}{5}{}%
+\contentsline {subsection}{\numberline {5.3}Teljesítménytétel}{5}{}%
